@@ -1,0 +1,71 @@
+* {
+    margin: 0; /* Set margin for all elements to 0 */
+    padding: 0; /* Set padding for all elements to 0 */
+    font-family: 'Poppins', sans-serif; /* Set font for the entire page */
+    box-sizing: border-box; /* Include padding and border in the element's total size */
+}
+
+body {
+    background: linear-gradient(135deg, #250057, #3c12c6); /* Gradient background for the page */
+    height: 100vh; /* Body height equals viewport height */
+    display: flex; /* Use Flexbox to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    overflow: hidden; /* Hide any overflow content */
+}
+
+.input-box {
+    background: #ffffff; /* Background color of the input box */
+    width: 90%; /* Width is 90% of the parent element */
+    max-width: 500px; /* Maximum width is 500px */
+    border-radius: 20px; /* Round the corners of the input box */
+    padding: 20px; /* Inner spacing of the input box */
+    margin: 0 auto; /* Center the input box horizontally */
+    display: flex; /* Use Flexbox to center inner elements */
+    align-items: center; /* Center inner elements vertically */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Shadow for the input box */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition effects for transform and shadow */
+}
+
+.input-box:hover {
+    transform: translateY(-8px); /* Move the input box up on hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+}
+
+.input-box input {
+    width: 100%; /* Input takes full width of the container */
+    padding: 12px 15px; /* Inner spacing for the input */
+    border: 2px solid #250057; /* Border for the input */
+    border-radius: 10px; /* Round the corners of the input */
+    font-size: 24px; /* Font size inside the input */
+    color: #555; /* Text color inside the input */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transition effects for border color and shadow */
+}
+
+.input-box input:focus {
+    border-color: #6a2c91; /* Change border color when focused */
+    outline: none; /* Hide default outline when focused */
+    box-shadow: 0 0 5px rgba(106, 44, 145, 0.5); /* Glow effect when focused */
+}
+
+.input-box img {
+    width: 40px; /* Size of the eye icon */
+    cursor: pointer; /* Show pointer cursor on hover */
+    margin-left: 10px; /* Left margin for the eye icon */
+    transition: transform 0.3s, filter 0.3s; /* Transition effects for transform and filter */
+}
+
+.input-box img:hover {
+    transform: scale(1.2); /* Scale up the icon on hover */
+    filter: brightness(1.2); /* Brighten the icon on hover */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .input-box {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+    .input-box input {
+        font-size: 20px; /* Smaller font size for smaller screens */
+    }
+}

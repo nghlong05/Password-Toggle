@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Toggle - Easy Tutorials</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .fade {
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+        .visible {
+            opacity: 1;
+        }
+        #feedback {
+            margin-top: 10px; /* Space between input and feedback */
+            color: #333; /* Feedback text color */
+        }
+    </style>
+</head>
+<body>
+    <div class="input-box">
+        <input type="password" placeholder="Mật khẩu" id="password" aria-label="Password input">
+        <img src="476425280_877920714342933_5758182726375979281_n.png" id="eyeicon" alt="Toggle password visibility" style="cursor:pointer;">
+        <div id="feedback" class="fade"></div> <!-- Feedback message -->
+    </div>
+    <script>
+        // References to HTML elements
+        let eyeicon = document.getElementById("eyeicon");
+        let password = document.getElementById("password");
+        let feedback = document.getElementById("feedback");
+
+        // Click event for eye icon
+        eyeicon.onclick = function() {
+            // Toggle password visibility
+            if (password.type === "password") {
+                password.type = "text"; // Show password
+                eyeicon.src = "476425280_877920714342933_5758182726375979281_n.png"; // Change icon to 'visible'
+                feedback.textContent = "Mật khẩu đang hiển thị"; // Feedback message
+            } else {
+                password.type = "password"; // Hide password
+                eyeicon.src = "476615068_504592562678974_673362652613612636_n.png"; // Change icon to 'hidden'
+                feedback.textContent = "Mật khẩu đã ẩn"; // Feedback message
+            }
+
+            // Show feedback message with animation
+            feedback.classList.remove('fade');
+            feedback.classList.add('visible');
+            setTimeout(() => {
+                feedback.classList.remove('visible');
+                feedback.classList.add('fade');
+            }, 2000); // Hide feedback after 2 seconds
+        }
+    </script>
+</body>
+</html>
